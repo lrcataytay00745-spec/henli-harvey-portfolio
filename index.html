@@ -1,203 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Henli Harvey Asueros | Virtual Assistant</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Henli Harvey Asueros | Remote Operations & Executive Support</title>
+  //fonts.googleapis.com">
+  //fonts.gstatic.com" crossorigin>
+  //fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --cream:       #FAF7F2;
-      --blush:       #E8C9C1;
-      --dusty-rose:  #C9897A;
-      --mocha:       #7B4F3A;
-      --charcoal:    #2E2A27;
-      --warm-gray:   #9E9189;
-      --white:       #FFFFFF;
-      --card-bg:     #FDF5F0;
-      --border:      #EDD9D1;
+      --white: #ffffff; --off-white: #faf9f7; --light-gray: #f2f0ec;
+      --border: #e4e0d8; --muted: #9a9590; --body: #3a3633;
+      --heading: #1a1714; --accent: #8b6f5e;
     }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Jost', sans-serif;
-      background: var(--cream);
-      color: var(--charcoal);
-      line-height: 1.7;
+    body { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; color: var(--body); background-color: var(--white); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); padding: 0 6%; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 500; color: var(--heading); text-decoration: none; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 0.73rem; font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase; color: var(--body); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    #hero { padding-top: 130px; padding-bottom: 100px; padding-left: 6%; padding-right: 6%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 6rem; align-items: center; }
+    .hero-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; }
+    .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 5.5vw, 4.5rem); font-weight: 400; color: var(--heading); line-height: 1.08; margin-bottom: 1rem; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(1rem, 1.8vw, 1.2rem); font-style: italic; color: var(--accent); margin-bottom: 2rem; }
+    .hero-desc { font-size: 0.95rem; line-height: 1.85; color: var(--body); max-width: 500px; margin-bottom: 2.5rem; }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 0.72rem 1.8rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border: 1.5px solid var(--heading); color: var(--heading); background: transparent; transition: all 0.22s; cursor: pointer; }
+    .btn:hover { background: var(--heading); color: var(--white); }
+    .btn-filled { background: var(--heading); color: var(--white); }
+    .btn-filled:hover { background: var(--accent); border-color: var(--accent); }
+    .hero-visual { display: flex; justify-content: flex-end; }
+    .photo-frame { width: 320px; height: 400px; background: var(--light-gray); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.8rem; color: var(--muted); font-size: 0.8rem; letter-spacing: 0.08em; text-align: center; padding: 2rem; }
+    .photo-icon { width: 54px; height: 54px; border: 1.5px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 0.4rem; }
+    section { padding: 90px 6%; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-divider { display: flex; align-items: center; gap: 1.2rem; margin-bottom: 3rem; }
+    .section-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+    .section-line { flex: 1; height: 1px; background: var(--border); }
+    .section-heading { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 400; color: var(--heading); line-height: 1.2; margin-bottom: 1.2rem; }
+    .section-sub { font-size: 0.93rem; color: var(--muted); line-height: 1.8; max-width: 540px; }
+    #about { background: var(--off-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 5rem; margin-top: 1.5rem; align-items: start; }
+    .about-text p { font-size: 0.95rem; line-height: 1.9; margin-bottom: 1.3rem; }
+    .about-facts { display: flex; flex-direction: column; }
+    .fact-item { padding: 1.4rem 0; border-bottom: 1px solid var(--border); }
+    .fact-item:first-child { border-top: 1px solid var(--border); }
+    .fact-label { font-size: 0.67rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; }
+    .fact-value { font-family: 'Playfair Display', serif; font-size: 0.98rem; color: var(--heading); }
+    #skills { background: var(--white); }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); margin-top: 3rem; }
+    .skill-cat { padding: 2.2rem; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .skill-cat:nth-child(3n) { border-right: none; }
+    .skill-cat:nth-last-child(-n+3) { border-bottom: none; }
+    .skill-cat-title { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.3rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .skill-list li { font-size: 0.87rem; color: var(--body); padding-left: 1.1rem; position: relative; }
+    .skill-list li::before { content: '—'; position: absolute; left: 0; color: var(--border); font-size: 0.7rem; top: 0.1rem; }
+    #portfolio { background: var(--off-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .portfolio-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3rem; }
+    .project-item { display: grid; grid-template-columns: 72px 1fr; gap: 2.5rem; padding: 2.8rem 0; border-bottom: 1px solid var(--border); align-items: start; }
+    .project-item:first-of-type { border-top: 1px solid var(--border); }
+    .project-num { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 400; color: var(--border); line-height: 1; }
+    .project-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 500; color: var(--heading); margin-bottom: 0.6rem; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.9rem; }
+    .tag { font-size: 0.64rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--border); padding: 0.22rem 0.65rem; background: var(--white); }
+    .project-desc { font-size: 0.9rem; color: var(--body); line-height: 1.75; }
+    #tools { background: var(--white); }
+    .tools-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem; }
+    .tool-item { background: var(--white); padding: 1.6rem 1rem; text-align: center; font-size: 0.8rem; font-weight: 500; color: var(--body); transition: background 0.18s; }
+    .tool-item:hover { background: var(--light-gray); }
+    #contact { background: var(--heading); border-top: 1px solid var(--border); }
+    #contact .section-label { color: rgba(255,255,255,0.35); }
+    #contact .section-heading { color: var(--white); }
+    #contact .section-line { background: rgba(255,255,255,0.1); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; margin-top: 1.5rem; align-items: start; }
+    .contact-text { font-size: 0.95rem; line-height: 1.85; color: rgba(255,255,255,0.6); margin-bottom: 2rem; }
+    .contact-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-light { border-color: rgba(255,255,255,0.4); color: rgba(255,255,255,0.85); }
+    .btn-light:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); color: #fff; }
+    .btn-light-filled { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.4); color: #fff; }
+    .btn-light-filled:hover { background: rgba(255,255,255,0.2); }
+    .contact-links { display: flex; flex-direction: column; }
+    .contact-link-item { padding: 1.3rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .contact-link-item:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+    .contact-link-label { font-size: 0.67rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 0.3rem; }
+    .contact-link-value { font-size: 0.93rem; color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s; }
+    .contact-link-value:hover { color: #fff; }
+    footer { background: var(--heading); padding: 2rem 6%; border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .footer-name { font-family: 'Playfair Display', serif; font-size: 0.9rem; color: rgba(255,255,255,0.5); }
+    .footer-note { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+    @media (max-width: 768px) {
+      #hero, .about-grid, .portfolio-header, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-visual { justify-content: center; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .skill-cat { border-right: none; }
+      .tools-grid { grid-template-columns: repeat(3, 1fr); }
+      .nav-links { display: none; }
     }
-
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(250,247,242,0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 5%;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 64px;
-    }
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem; font-weight: 600;
-      color: var(--mocha); letter-spacing: 0.04em;
-    }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      text-decoration: none; font-size: 0.85rem; font-weight: 500;
-      color: var(--warm-gray); letter-spacing: 0.08em; text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--dusty-rose); }
-
-    #hero {
-      min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
-      text-align: center;
-      padding: 6rem 5% 4rem;
-      background: linear-gradient(160deg, var(--cream) 55%, #F0DDD7 100%);
-      position: relative; overflow: hidden;
-    }
-    .hero-tag {
-      display: inline-block;
-      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--dusty-rose);
-      background: rgba(201,137,122,0.12);
-      border: 1px solid var(--blush);
-      border-radius: 50px; padding: 0.35rem 1.1rem;
-      margin-bottom: 1.6rem;
-    }
-    .hero-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 8vw, 6rem);
-      font-weight: 300; line-height: 1.1;
-      color: var(--charcoal); margin-bottom: 0.6rem;
-    }
-    .hero-name span { color: var(--dusty-rose); }
-    .hero-title {
-      font-size: 1rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--warm-gray); margin-bottom: 1.8rem;
-    }
-    .hero-summary {
-      max-width: 620px; margin: 0 auto 2.5rem;
-      font-size: 1rem; color: var(--charcoal); opacity: 0.8; line-height: 1.8;
-    }
-    .btn {
-      display: inline-block; text-decoration: none;
-      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
-      padding: 0.85rem 2.2rem; border-radius: 50px;
-      transition: all 0.25s;
-    }
-    .btn-primary {
-      background: var(--dusty-rose); color: var(--white);
-      border: 2px solid var(--dusty-rose);
-    }
-    .btn-primary:hover { background: var(--mocha); border-color: var(--mocha); }
-
-    section { padding: 6rem 5%; }
-    .section-label {
-      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--dusty-rose); margin-bottom: 0.6rem;
-    }
-    .section-heading {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 4vw, 3rem); font-weight: 400;
-      color: var(--charcoal); margin-bottom: 3rem; line-height: 1.2;
-    }
-
-    #services { background: var(--white); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-    .service-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px; padding: 2rem 1.6rem;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(123,79,58,0.1);
-    }
-    .service-card h3 {
-      font-size: 0.95rem; font-weight: 600; color: var(--mocha);
-      letter-spacing: 0.04em; margin-bottom: 0.5rem;
-    }
-    .service-card p { font-size: 0.87rem; color: var(--warm-gray); line-height: 1.7; }
-
-    footer {
-      background: var(--charcoal);
-      color: var(--warm-gray);
-      padding: 3rem 5%;
-      text-align: center;
-    }
-    footer a { color: var(--blush); text-decoration: none; }
-    footer a:hover { color: var(--dusty-rose); }
   </style>
 </head>
 <body>
 
-  <nav>
-    <div class="nav-logo">Henli Harvey Asueros</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<nav>
+  <a href="#" class="nav-logo">Henli Harvey Asueros</a>
+  <ul class="nav-links">
+    ><a href="#about">About</a></li>
+    ><a href="#skills">Skills</a></li>
+    ><a href="#portfolio">Portfolio</a></li>
+    ><a href="#tools">Tools</a></li>
+    ><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <section id="hero">
-    <div>
-      <div class="hero-tag">Remote Work • GMT+8 • Philippines</div>
-      <h1 class="hero-name">Henli Harvey <span>Asueros</span></h1>
-      <p class="hero-title">Administrative Executive Virtual Assistant</p>
-      <p class="hero-summary">
-        Detail-oriented Administrative and Executive Virtual Assistant with experience supporting documentation, client communication, CRM updates, and operational workflows in fast-paced environments.
-      </p>
-      <a href="mailto:henliharveyasueros02@gmail.com" class="btn btn-primary">Get in Touch</a>
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Remote GMT+8 • Philippines</div>
+    <h1 class="hero-name">Henli Harvey Asueros</h1>
+    <p class="hero-title">Remote Operations & Executive Support Specialist</p>
+    <p class="hero-desc">
+      Helping teams stay organized, responsive, and operationally efficient through structured communication, workflow support, and administrative coordination in remote environments.
+    </p>
+    <div class="hero-ctas">
+      <a href="#portfolio" class="btn btn-filled">View Portfolio</a>
+      <a href="#contact" class="btn">Get In Touch</a>
     </div>
-  </section>
+  </div>
+  <div class="hero-visual">
+    <div class="photo-frame">
+      <div class="photo-icon">👤</div>
+      <span>Professional Photo</span>
+      <span style="font-size:0.7rem; opacity:0.6;">(Replace with Barong photo)</span>
+    </div>
+  </div>
+</section>
 
-  <section id="services">
-    <div class="section-label">What I Help With</div>
-    <h2 class="section-heading">Services & Expertise</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>📧 Inbox & Email Management</h3>
-        <p>Organizing, filtering, and responding to emails with professionalism and accuracy.</p>
+<section id="about">
+  <div class="section-inner">
+    <div class="section-divider">
+      <span class="section-label">About Me</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h2 class="section-heading">Professional Background</h2>
+        <p>
+          Detail-oriented Administrative and Executive Virtual Assistant with experience supporting documentation, client communication, CRM updates, and operational workflows in fast-paced environments. I help businesses stay organized by managing inboxes, schedules, and administrative systems with accuracy and clear communication.
+        </p>
+        <p>
+          With a background in English Language and Applied Linguistics, I bring strong written judgment and professionalism to every task. I specialize in communication management, workflow coordination, and operational support for remote teams.
+        </p>
       </div>
-      <div class="service-card">
-        <h3>📅 Calendar & Scheduling</h3>
-        <p>Coordinating appointments, meetings, and managing schedules efficiently.</p>
-      </div>
-      <div class="service-card">
-        <h3>📊 Data Entry & CRM</h3>
-        <p>Accurate data entry and CRM system updates to keep records organized.</p>
-      </div>
-      <div class="service-card">
-        <h3>📂 File & Document Organization</h3>
-        <p>Structured filing systems for easy access and retrieval of documents.</p>
-      </div>
-      <div class="service-card">
-        <h3>💬 Client Communication</h3>
-        <p>Professional follow-ups and coordination with clients and stakeholders.</p>
-      </div>
-      <div class="service-card">
-        <h3>📝 Meeting Notes & Documentation</h3>
-        <p>Comprehensive note-taking and documentation for meetings and projects.</p>
+      <div class="about-facts">
+        <div class="fact-item">
+          <div class="fact-label">Location</div>
+          <div class="fact-value">Davao City, Philippines</div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-label">Time Zone</div>
+          <div class="fact-value">GMT+8 (PHT)</div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-label">Education</div>
+          <div class="fact-value">BA English Language & Applied Linguistics</div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-label">Work Style</div>
+          <div class="fact-value">Remote / Fully Distributed</div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer id="contact">
-    <h3 style="color: var(--blush); margin-bottom: 1rem;">Let's Work Together</h3>
-    <p>Email: <a href="mailto:henliharveyasueros02@gmail.com">henliharveyasueros02@gmail.com</a></p>
-    <p style="margin-top: 0.5rem;">Phone: +63 906 584 8695 | +63 992 424 1552</p>
-    <p style="margin-top: 2rem; font-size: 0.85rem; opacity: 0.7;">&copy; 2026 Henli Harvey Asueros. All rights reserved.</p>
-  </footer>
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-divider">
+      <span class="section-label">Skills & Expertise</span>
+      <div class="section-line"></div>
+    </div>
+    <h2 class="section-heading">What I Help With</h2>
+    <div class="skills-grid">
+      <div class="skill-cat">
+        <div class="skill-cat-title">Operations Support</div>
+        <ul class="skill-list">
+          >Workflow Coordination</li>
+          >Task Management</li>
+          >Executive Assistance</li>
+          >Administrative Support</li>
+        </ul>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title">Communication</div>
+        <ul class="skill-list">
+          >Client Communication</li>
+          >Professional Email Writing</li>
+          >Meeting Coordination</li>
+          >Documentation</li>
+        </ul>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title">Data & CRM</div>
+        <ul class="skill-list">
+          >Data Entry & CRM Updates</li>
+          >Follow-up Tracking</li>
+          >Record Management</li>
+          >Reporting Systems</li>
+        </ul>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title">Scheduling</div>
+        <ul class="skill-list">
+          >Calendar Management</li>
+          >Appointment Scheduling</li>
+          >Meeting Coordination</li>
+          >Deadline Tracking</li>
+        </ul>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title">Organization</div>
+        <ul class="skill-list">
+          >File & Document Organization</li>
+          >Inbox Management</li>
+          >System Structure</li>
+          >Process Documentation</li>
+        </ul>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title">Core Strengths</div>
+        <ul class="skill-list">
+          >Strong English Proficiency</li>
+          >Attention to Detail</li>
+          >Reliable Follow-ups</li>
+          >Quick System Adoption</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="section-inner">
+    <div class="section-divider">
+      <span class="section-label">Portfolio</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="portfolio-header">
+      <div>
+        <h2 class="section-heading">Projects & Systems</h2>
+        <p class="section-sub">
+          Simulated workflow management systems demonstrating operational thinking, structured coordination, and professional administrative support capabilities.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-num">01</div>
+      <div>
+        <h3 class="project-title">Task Management System</h3>
+        <div class="project-tags">
+          <span class="tag">ClickUp</span>
+          <span class="tag">Workflow Management</span>
+          <span class="tag">Task Prioritization</span>
+        </div>
+        <p class="project-desc">
+          Centralized workflow management system designed to organize administrative tasks, monitor progress, prioritize deadlines, and improve day-to-day operational coordination in a remote work environment.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-num">02</div>
+      <div>
+        <h3 class="project-title">Email Management System</h3>
+        <div class="project-tags">
+          <span class="tag">Gmail</span>
+          <span class="tag">Communication</span>
+          <span class="tag">Organization</span>
+        </div>
+        <p class="project-desc">
+          Structured email management workflow created to support inbox organization, professional communication handling, follow-up tracking, and efficient coordination of client and internal communications.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-num">03</div>
+      <div>
+        <h3 class="project-title">Data & CRM Tracking</h3>
+        <div class="project-tags">
+          <span class="tag">Google Sheets</span>
+          <span class="tag">CRM</span>
+          <span class="tag">Data Management</span>
+        </div>
+        <p class="project-desc">
+          Sample CRM and data tracking systems created to demonstrate organized client record management, follow-up coordination, documentation tracking, and workflow monitoring in a remote administrative environment.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-num">04</div>
+      <div>
+        <h3 class="project-title">Calendar Management System</h3>
+        <div class="project-tags">
+          <span class="tag">Google Calendar</span>
+          <span class="tag">Scheduling</span>
+          <span class="tag">Coordination</span>
+        </div>
+        <p class="project-desc">
+          Optimized time management system focusing on organizing schedules, prioritizing tasks, and ensuring seamless coordination for executive success and productivity in fast-paced business environments.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-num">05</div>
+      <div>
+        <h3 class="project-title">File Organization System</h3>
+        <div class="project-tags">
+          <span class="tag">Google Drive</span>
+          <span class="tag">Documentation</span>
+          <span class="tag">Structure</span>
+        </div>
+        <p class="project-desc">
+          Comprehensive file management structure organizing client folders, administrative archives, and operational documentation to streamline processes and facilitate efficient information retrieval and collaboration.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="tools">
+  <div class="section-inner">
+    <div class="section-divider">
+      <span class="section-label">Tools & Platforms</span>
+      <div class="section-line"></div>
+    </div>
+    <h2 class="section-heading">Tools I Use</h2>
+    <div class="tools-grid">
+      <div class="tool-item">Google Workspace</div>
+      <div class="tool-item">ClickUp</div>
+      <div class="tool-item">Trello</div>
+      <div class="tool-item">Notion</div>
+      <div class="tool-item">Slack</div>
+      <div class="tool-item">Zoom</div>
+      <div class="tool-item">Canva</div>
+      <div class="tool-item">Microsoft Office</div>
+      <div class="tool-item">Asana</div>
+      <div class="tool-item">Monday.com</div>
+      <div class="tool-item">CRM Systems</div>
+      <div class="tool-item">+50 More Tools</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-divider">
+      <span class="section-label">Get In Touch</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <h2 class="section-heading">Let's Work Together</h2>
+        <p class="contact-text">
+          I'm available for remote administrative and executive support roles. If you're looking for someone organized, detail-oriented, and reliable to help streamline your operations, let's connect.
+        </p>
+        <div class="contact-ctas">
+          <a href="mailto:henliharveyasueros02@gmail.com" class="btn btn-light-filled">Send Email</a>
+          <a href="https://www.linkedin.com/in/henli-harvey-asueros" class="btn btn-light" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="contact-links">
+        <div class="contact-link-item">
+          <div class="contact-link-label">Email</div>
+          <a href="mailto:henliharveyasueros02@gmail.com" class="contact-link-value">henliharveyasueros02@gmail.com</a>
+        </div>
+        <div class="contact-link-item">
+          <div class="contact-link-label">Phone</div>
+          <a href="tel:+639065848695" class="contact-link-value">+63 906 584 8695</a>
+        </div>
+        <div class="contact-link-item">
+          <div class="contact-link-label">Alternative Phone</div>
+          <a href="tel:+639924241552" class="contact-link-value">+63 992 424 1552</a>
+        </div>
+        <div class="contact-link-item">
+          <div class="contact-link-label">Location</div>
+          <span class="contact-link-value">Davao City, Philippines (GMT+8)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-name">Henli Harvey Asueros</div>
+    <div class="footer-note">© 2026 · Remote Operations & Executive Support</div>
+  </div>
+</footer>
 
 </body>
 </html>
