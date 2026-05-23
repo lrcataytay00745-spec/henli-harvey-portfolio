@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Henli Harvey Asueros | Virtual Assistant</title>
-  //fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -29,7 +29,6 @@
       line-height: 1.7;
     }
 
-    /* ── NAV ── */
     nav {
       position: sticky; top: 0; z-index: 100;
       background: rgba(250,247,242,0.92);
@@ -52,7 +51,6 @@
     }
     .nav-links a:hover { color: var(--dusty-rose); }
 
-    /* ── HERO ── */
     #hero {
       min-height: 100vh;
       display: flex; align-items: center; justify-content: center;
@@ -60,12 +58,6 @@
       padding: 6rem 5% 4rem;
       background: linear-gradient(160deg, var(--cream) 55%, #F0DDD7 100%);
       position: relative; overflow: hidden;
-    }
-    #hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 70% 30%, rgba(232,201,193,0.4) 0%, transparent 60%);
-      pointer-events: none;
     }
     .hero-tag {
       display: inline-block;
@@ -91,17 +83,6 @@
       max-width: 620px; margin: 0 auto 2.5rem;
       font-size: 1rem; color: var(--charcoal); opacity: 0.8; line-height: 1.8;
     }
-    .hero-badges {
-      display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center;
-      margin-bottom: 2.5rem;
-    }
-    .badge {
-      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em;
-      color: var(--mocha);
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 50px; padding: 0.3rem 1rem;
-    }
     .btn {
       display: inline-block; text-decoration: none;
       font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
@@ -113,14 +94,7 @@
       border: 2px solid var(--dusty-rose);
     }
     .btn-primary:hover { background: var(--mocha); border-color: var(--mocha); }
-    .btn-outline {
-      background: transparent; color: var(--dusty-rose);
-      border: 2px solid var(--blush); margin-left: 1rem;
-    }
-    .btn-outline:hover { border-color: var(--dusty-rose); background: rgba(201,137,122,0.06); }
-    .hero-cta { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; }
 
-    /* ── SECTION SHARED ── */
     section { padding: 6rem 5%; }
     .section-label {
       font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
@@ -129,19 +103,9 @@
     .section-heading {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 4vw, 3rem); font-weight: 400;
-      color: var(--charcoal); margin-bottom: 1rem; line-height: 1.2;
-    }
-    .section-sub {
-      font-size: 0.95rem; color: var(--warm-gray);
-      max-width: 540px; margin-bottom: 3rem; line-height: 1.8;
-    }
-    .divider {
-      width: 50px; height: 2px;
-      background: linear-gradient(90deg, var(--dusty-rose), var(--blush));
-      border-radius: 2px; margin: 0.8rem 0 1.2rem;
+      color: var(--charcoal); margin-bottom: 3rem; line-height: 1.2;
     }
 
-    /* ── SERVICES ── */
     #services { background: var(--white); }
     .services-grid {
       display: grid;
@@ -158,123 +122,82 @@
       transform: translateY(-4px);
       box-shadow: 0 12px 32px rgba(123,79,58,0.1);
     }
-    .service-icon {
-      font-size: 1.6rem; margin-bottom: 1rem;
-    }
     .service-card h3 {
       font-size: 0.95rem; font-weight: 600; color: var(--mocha);
       letter-spacing: 0.04em; margin-bottom: 0.5rem;
     }
     .service-card p { font-size: 0.87rem; color: var(--warm-gray); line-height: 1.7; }
 
-    /* ── STRENGTHS ── */
-    #strengths {
-      background: linear-gradient(135deg, #F9EDE8 0%, var(--cream) 100%);
+    footer {
+      background: var(--charcoal);
+      color: var(--warm-gray);
+      padding: 3rem 5%;
+      text-align: center;
     }
-    .strengths-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.4rem;
-    }
-    .strength-item {
-      display: flex; align-items: flex-start; gap: 1rem;
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 12px; padding: 1.4rem 1.6rem;
-    }
-    .strength-dot {
-      width: 10px; height: 10px; border-radius: 50%;
-      background: var(--dusty-rose); flex-shrink: 0; margin-top: 6px;
-    }
-    .strength-item p { font-size: 0.9rem; color: var(--charcoal); line-height: 1.6; }
+    footer a { color: var(--blush); text-decoration: none; }
+    footer a:hover { color: var(--dusty-rose); }
+  </style>
+</head>
+<body>
 
-    /* ── TOOLS ── */
-    #tools { background: var(--white); }
-    .tools-grid {
-      display: flex; flex-wrap: wrap; gap: 0.8rem;
-    }
-    .tool-pill {
-      font-size: 0.82rem; font-weight: 500;
-      color: var(--mocha);
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 50px; padding: 0.45rem 1.2rem;
-      letter-spacing: 0.04em;
-      transition: background 0.2s, color 0.2s;
-    }
-    .tool-pill:hover { background: var(--blush); color: var(--white); }
+  <nav>
+    <div class="nav-logo">Henli Harvey Asueros</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    /* ── SYSTEMS SHOWCASE ── */
-    #systems { background: var(--cream); }
-    .systems-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.8rem;
-    }
-    .system-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 20px; overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .system-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 16px 40px rgba(123,79,58,0.12);
-    }
-    .system-card-header {
-      padding: 1.8rem 1.8rem 1rem;
-      border-bottom: 1px solid var(--border);
-      background: linear-gradient(135deg, #FDF0EC, var(--card-bg));
-    }
-    .system-card-header .icon { font-size: 2rem; margin-bottom: 0.8rem; }
-    .system-card-header h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem; font-weight: 500; color: var(--mocha); margin-bottom: 0.4rem;
-    }
-    .system-card-body { padding: 1.4rem 1.8rem 1.8rem; }
-    .system-card-body p { font-size: 0.87rem; color: var(--warm-gray); line-height: 1.7; }
-    .system-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
-    .system-tag {
-      font-size: 0.72rem; font-weight: 500;
-      color: var(--dusty-rose); background: rgba(201,137,122,0.1);
-      border-radius: 50px; padding: 0.2rem 0.75rem; letter-spacing: 0.05em;
-    }
+  <section id="hero">
+    <div>
+      <div class="hero-tag">Remote Work • GMT+8 • Philippines</div>
+      <h1 class="hero-name">Henli Harvey <span>Asueros</span></h1>
+      <p class="hero-title">Administrative Executive Virtual Assistant</p>
+      <p class="hero-summary">
+        Detail-oriented Administrative and Executive Virtual Assistant with experience supporting documentation, client communication, CRM updates, and operational workflows in fast-paced environments.
+      </p>
+      <a href="mailto:henliharveyasueros02@gmail.com" class="btn btn-primary">Get in Touch</a>
+    </div>
+  </section>
 
-    /* ── CRM METRICS ── */
-    #metrics { background: linear-gradient(135deg, #F0DDD7, #FAF7F2); }
-    .metrics-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 1.2rem;
-    }
-    .metric-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 16px; padding: 1.6rem 1.4rem; text-align: center;
-    }
-    .metric-value {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.6rem; font-weight: 600; color: var(--dusty-rose);
-      line-height: 1;
-    }
-    .metric-label { font-size: 0.78rem; color: var(--warm-gray); margin-top: 0.4rem; letter-spacing: 0.05em; }
+  <section id="services">
+    <div class="section-label">What I Help With</div>
+    <h2 class="section-heading">Services & Expertise</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>📧 Inbox & Email Management</h3>
+        <p>Organizing, filtering, and responding to emails with professionalism and accuracy.</p>
+      </div>
+      <div class="service-card">
+        <h3>📅 Calendar & Scheduling</h3>
+        <p>Coordinating appointments, meetings, and managing schedules efficiently.</p>
+      </div>
+      <div class="service-card">
+        <h3>📊 Data Entry & CRM</h3>
+        <p>Accurate data entry and CRM system updates to keep records organized.</p>
+      </div>
+      <div class="service-card">
+        <h3>📂 File & Document Organization</h3>
+        <p>Structured filing systems for easy access and retrieval of documents.</p>
+      </div>
+      <div class="service-card">
+        <h3>💬 Client Communication</h3>
+        <p>Professional follow-ups and coordination with clients and stakeholders.</p>
+      </div>
+      <div class="service-card">
+        <h3>📝 Meeting Notes & Documentation</h3>
+        <p>Comprehensive note-taking and documentation for meetings and projects.</p>
+      </div>
+    </div>
+  </section>
 
-    /* ── PRIORITY FRAMEWORK ── */
-    #priority { background: var(--white); }
-    .priority-table {
-      width: 100%; border-collapse: collapse; margin-top: 0.5rem;
-      font-size: 0.88rem;
-    }
-    .priority-table th {
-      text-align: left; font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--dusty-rose); padding: 0.8rem 1.2rem;
-      background: var(--card-bg); border-bottom: 2px solid var(--border);
-    }
-    .priority-table td {
-      padding: 1rem 1.2rem; border-bottom: 1px solid var(--border);
-      color: var(--charcoal);
-    }
-    .priority-table tr:last-child td { border-bottom: none; }
-    .priority-table tr:hover td { background: var(--card-bg); }
-    .priority-badge {
-      display: inline-block; font-size: 0.72rem; font-weight: 600;
-      border-radius: 50px; padding: 0.2rem 0.75rem; letter-spacing: 0.06em;
-    }
-    .p-urgent { background: #FDECEA; color: #C0392B; }
-    .p-high   { background: #FEF3E2; color: #D4841A; }
-    .p-medium { background: #EAF3FB; color: #2471A
+  <footer id="contact">
+    <h3 style="color: var(--blush); margin-bottom: 1rem;">Let's Work Together</h3>
+    <p>Email: <a href="mailto:henliharveyasueros02@gmail.com">henliharveyasueros02@gmail.com</a></p>
+    <p style="margin-top: 0.5rem;">Phone: +63 906 584 8695 | +63 992 424 1552</p>
+    <p style="margin-top: 2rem; font-size: 0.85rem; opacity: 0.7;">&copy; 2026 Henli Harvey Asueros. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
