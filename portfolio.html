@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Henli Harvey Asueros</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__logo">HHA</div>
+  <ul class="nav__links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav__toggle" onclick="toggleNav()">&#9776;</button>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="section__eyebrow">My Work</p>
+    <h1 class="page-hero__title">Portfolio Projects</h1>
+    <p class="page-hero__sub">Operational systems, workflow tools, and communication frameworks built to demonstrate real-world executive support capability.</p>
+  </div>
+</section>
+
+<section class="portfolio section">
+  <div class="container">
+
+    <!-- PROJECT 1 -->
+    <div class="project-card">
+      <div class="project-card__header">
+        <span class="project-badge">Flagship Project</span>
+        <span class="project-num">01</span>
+      </div>
+      <h2 class="project-card__title">Executive Operations Management System</h2>
+      <p class="project-card__desc">A centralized workflow management system designed to organize administrative tasks, monitor progress, prioritize deadlines, and improve day-to-day operational coordination in a remote work environment. Built using ClickUp with Kanban boards, list views, and task dashboards.</p>
+      <div class="project-card__tags">
+        <span>ClickUp</span><span>Workflow Design</span><span>Task Management</span><span>Operations</span>
+      </div>
+      <div class="project-card__details">
+        <div class="project-detail">
+          <strong>Task Dashboard</strong>
+          <p>Structured ClickUp environment with task statuses, priority levels, subtasks, approvals, and recurring workflows including meeting follow-ups, invoice reminders, and onboarding coordination.</p>
+        </div>
+        <div class="project-detail">
+          <strong>Kanban Board</strong>
+          <p>End-to-end administrative task coordination with backlog management, scheduling, review processes, approvals, and project completion tracking.</p>
+        </div>
+        <div class="project-detail">
+          <strong>Priority Framework</strong>
+          <p>Urgent &rarr; High &rarr; Medium &rarr; Low priority system with defined response timelines for efficient workload management.</p>
+        </div>
+      </div>
+      <a href="https://canva.link/3e981r8vxpq45ul" target="_blank" class="btn btn--outline">View Full Portfolio PDF</a>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-card">
+      <div class="project-card__header">
+        <span class="project-badge project-badge--secondary">Communication Systems</span>
+        <span class="project-num">02</span>
+      </div>
+      <h2 class="project-card__title">Email Management &amp; Client Communication Hub</h2>
+      <p class="project-card__desc">A structured email management workflow supporting inbox organization, professional communication handling, follow-up tracking, and efficient coordination of client and internal communications. Includes sample email templates demonstrating real-world correspondence.</p>
+      <div class="project-card__tags">
+        <span>Email Systems</span><span>Gmail</span><span>Client Communication</span><span>Templates</span>
+      </div>
+      <div class="project-card__details">
+        <div class="project-detail">
+          <strong>Inbox Categorization</strong>
+          <p>Labels organized by urgency, workflow stage, and task type for faster response handling and streamlined follow-ups.</p>
+        </div>
+        <div class="project-detail">
+          <strong>Email Templates</strong>
+          <p>Client follow-up, meeting coordination, scheduling requests, onboarding emails, and escalation notices&mdash;all demonstrating professional tone and clarity.</p>
+        </div>
+        <div class="project-detail">
+          <strong>Communication SOP</strong>
+          <p>Documented response standards, escalation procedures, follow-up timelines, and communication tone guidelines.</p>
+        </div>
+      </div>
+      <a href="https://canva.link/3e981r8vxpq45ul" target="_blank" class="btn btn--outline">View Full Portfolio PDF</a>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-card">
+      <div class="project-card__header">
+        <span class="project-badge project-badge--tertiary">Data &amp; Analytics</span>
+        <span class="project-num">03</span>
+      </div>
+      <h2 class="project-card__title">Data, CRM &amp; Operations Tracking System</h2>
+      <p class="project-card__desc">A comprehensive operations dashboard environment demonstrating organized client record management, follow-up coordination, documentation tracking, and performance monitoring. Built in Google Sheets with KPI dashboards and lead management systems.</p>
+      <div class="project-card__tags">
+        <span>Google Sheets</span><span>CRM</span><span>KPI Dashboard</span><span>Data Entry</span>
+      </div>
+      <div class="project-card__details">
+        <div class="project-detail">
+          <strong>CRM Tracker</strong>
+          <p>Client records with status, last contact, follow-up dates, and assigned tasks. Lead tracker with source, priority, and conversion status fields.</p>
+        </div>
+        <div class="project-detail">
+          <strong>KPI Dashboard</strong>
+          <p>Metrics including pending follow-ups (12), completed tasks (34), scheduled meetings (8), outstanding invoices (5), and client responses (21).</p>
+        </div>
+        <div class="project-detail">
+          <strong>File Organization</strong>
+          <p>Structured Google Drive with client project files, administrative archives, invoices, meeting notes, SOPs, and onboarding documentation.</p>
+        </div>
+      </div>
+      <a href="https://canva.link/3e981r8vxpq45ul" target="_blank" class="btn btn--outline">View Full Portfolio PDF</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <h2>Want to see the full portfolio?</h2>
+    <p>Download the complete PDF portfolio for detailed screenshots, workflow documentation, and system walkthroughs.</p>
+    <a href="https://canva.link/3e981r8vxpq45ul" target="_blank" class="btn btn--primary">Download Portfolio PDF</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 Henli Harvey Asueros &mdash; Remote Operations &amp; Executive Support Specialist</p>
+    <div class="footer__links">
+      <a href="https://www.linkedin.com/in/henli-harvey-asueros-a82b72378/" target="_blank">LinkedIn</a>
+      <a href="mailto:henliharveyasueros02@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

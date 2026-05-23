@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Henli Harvey Asueros</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__logo">HHA</div>
+  <ul class="nav__links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <button class="nav__toggle" onclick="toggleNav()">&#9776;</button>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="section__eyebrow">Get in Touch</p>
+    <h1 class="page-hero__title">Let&apos;s Work Together</h1>
+    <p class="page-hero__sub">Available for remote roles, freelance projects, and long-term executive support partnerships.</p>
+  </div>
+</section>
+
+<section class="contact section">
+  <div class="container contact__grid">
+
+    <div class="contact__info">
+      <h2>Reach Out Directly</h2>
+      <p>I&apos;m open to executive assistant roles, operations support positions, and remote administrative partnerships. Response time is typically within 24 hours.</p>
+      <div class="contact__item">
+        <span class="contact__icon">&#128231;</span>
+        <div>
+          <strong>Email</strong>
+          <a href="mailto:henliharveyasueros02@gmail.com">henliharveyasueros02@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact__item">
+        <span class="contact__icon">&#128222;</span>
+        <div>
+          <strong>Phone / WhatsApp</strong>
+          <a href="tel:+639065848695">+63 906 584 8695</a>
+          <span class="contact__sub">Also reachable at +63 992 424 1552</span>
+        </div>
+      </div>
+      <div class="contact__item">
+        <span class="contact__icon">&#128100;</span>
+        <div>
+          <strong>LinkedIn</strong>
+          <a href="https://www.linkedin.com/in/henli-harvey-asueros-a82b72378/" target="_blank">View Profile</a>
+        </div>
+      </div>
+      <div class="contact__item">
+        <span class="contact__icon">&#128196;</span>
+        <div>
+          <strong>Portfolio PDF</strong>
+          <a href="https://canva.link/3e981r8vxpq45ul" target="_blank">Download Portfolio</a>
+        </div>
+      </div>
+      <div class="contact__availability">
+        <strong>&#128994; Available for Remote Work</strong>
+        <span>Philippines &mdash; GMT+8 &mdash; Flexible hours</span>
+      </div>
+    </div>
+
+    <div class="contact__form-col">
+      <h2>Send a Message</h2>
+      <form class="contact-form" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="e.g. Executive Assistant Role" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" placeholder="Tell me about the role or project..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+        <p class="form-note" id="form-msg"></p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 Henli Harvey Asueros &mdash; Remote Operations &amp; Executive Support Specialist</p>
+    <div class="footer__links">
+      <a href="https://www.linkedin.com/in/henli-harvey-asueros-a82b72378/" target="_blank">LinkedIn</a>
+      <a href="mailto:henliharveyasueros02@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
